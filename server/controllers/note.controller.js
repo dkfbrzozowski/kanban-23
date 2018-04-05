@@ -43,7 +43,7 @@ export function deleteNote(req, res) {
     Lane.findOne({ id: note.laneId })
       .then(lane => {
         const notesFilterredArray = lane.notes.filter(singleNote => singleNote.id !== req.params.noteId);
-        lane.update({ notes: notesFilterredArray }, (error, resp) => {
+        lane.update({ notes: notesFilterredArray }, (error) => {
           if (error) {
             res.status(500).send(error);
           }
@@ -60,7 +60,7 @@ export function updateNote(req, res) {
 
   Note.findOne({ id: req.params.noteId })
     .then(note => {
-      note.update({ task: req.body.task }, (err, resp) => {
+      note.update({ task: req.body.task }, (err) => {
         if (err) {
           res.status(500).send(err);
         }
