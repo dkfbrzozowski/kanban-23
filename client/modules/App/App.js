@@ -7,8 +7,6 @@ import styles from './App.css';
 // Import Components
 import Helmet from 'react-helmet';
 import DevTools from './components/DevTools';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 
 // Import Actions
 import { toggleAddPost } from './AppActions';
@@ -34,7 +32,7 @@ export class App extends Component {
         {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
         <div>
           <Helmet
-            title="MERN Starter - Blog App"
+            title="Kanban-app"
             titleTemplate="%s - Blog App"
             meta={[
               { charset: 'utf-8' },
@@ -48,15 +46,10 @@ export class App extends Component {
               },
             ]}
           />
-          <Header
-            switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}
-            intl={this.props.intl}
-            toggleAddPost={this.toggleAddPostSection}
-          />
+          <h1 className={styles.title}>Kanban board</h1>
           <div className={styles.container}>
             {this.props.children}
           </div>
-          <Footer />
         </div>
       </div>
     );

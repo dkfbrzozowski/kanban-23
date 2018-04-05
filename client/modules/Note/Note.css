@@ -1,1 +1,27 @@
 /* Note styles */
+.Note {
+  padding: 5px;
+  color: rgb(60, 124, 108);
+}
+.notes li {
+  list-style-type: none;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: left;
+  position: relative;
+}
+.notes li button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  background-color: transparent;
+}
+.notes li button:hover {
+  cursor: pointer;
+  color: red;
+}
+.notes input {
+  max-width: 100%;
+}
